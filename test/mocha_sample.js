@@ -1,31 +1,10 @@
+/*eslint-env mocha */
 /*eslint strict: ["error", "function"]*/
 /*eslint no-console: "off" */
-/*global describe, after, before, beforeEach, afterEach, it */
 
-/*Asdddlint-env node */
-const expect = require('chai').expect;
+const expect = require('chai').expect,
+      target = require('../src/target.js');
 
-function sample(x) {
-  return {
-    plusOne: x + 1,
-    plusX: x + 'X',
-  };
-}
-
-function sample_error(flag) {
-  if (flag) {
-    throw new Error();
-  }
-}
-function sample_promise(flag) {
-  return new Promise((resolve, reject)=>{
-    if (flag) {
-      resolve('OK');
-    } else {
-      reject(new Error('ERROR'));
-    }
-  });
-}
 describe('catgT', ()=>{
   const ctg = 'cayegory TOP';
   before(()=>{
@@ -49,7 +28,7 @@ describe('catgT', ()=>{
       console.log('end test');
     });
     it('normal test', ()=>{
-      const ans = sample('432');
+      const ans = target.sample('432');
       expect(ans.plusOne).has.a('string');
       expect(ans).has.property('plusOne', '4321');
       expect(ans).is.a('object');
@@ -59,11 +38,11 @@ describe('catgT', ()=>{
       });
     });
     it('exception test', ()=>{
-      expect(sample_error.bind(null,true)).to.throw(Error);
-      expect(sample_error.bind(null,false)).to.not.throw(Error);
+      expect(target.sample_error.bind(null,true)).to.throw(Error);
+      expect(target.sample_error.bind(null,false)).to.not.throw(Error);
     });
     it('promise test', ()=>{
-      return sample_promise(true)
+      return target.sample_promise(true)
         .then((val) => {
           expect(val).is.equal('OK');
         })
@@ -72,7 +51,7 @@ describe('catgT', ()=>{
         });
     });
     it('promise test2', ()=>{
-      return sample_promise(false)
+      return target.sample_promise(false)
         .then(() => {
           expect().is.not.undefined;
         })
