@@ -1,0 +1,33 @@
+{
+  "name": "mocha_sample",
+  "version": "1.0.0",
+  "description": "mocha&chai sample code",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/inuduka-shino/mocha_sample.git"
+  },
+  "keywords": [
+    "mocha",
+    "chai"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inuduka-shino/mocha_sample/issues"
+  },
+  "homepage": "https://github.com/inuduka-shino/mocha_sample#readme",
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "eslint-config-google": "^0.7.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1"
+  }
+}
