@@ -1,6 +1,5 @@
 /*eslint-env mocha */
-/*eslint strict: ["error", "function"]*/
-/*eslint no-console: "off" */
+/*eslint strict: ["error", "function"], no-console: "off", no-await-in-loop: "disable" */
 
 const expect = require('chai').expect,
       target = require('../src/target.js');
